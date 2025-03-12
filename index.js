@@ -64,6 +64,16 @@ function displayVedios(videos) {
   console.log(videos);
   const videoContainer = document.getElementById("video-container");
   videoContainer.innerHTML="";
+
+  if(videos.length==0){
+     videoContainer.innerHTML = `
+     <div class="col-span-full my-5 flex flex-col justify-center items-center">
+        <img class="grayscale" src="Icon.png" alt="" />
+        <h2 class="text-2xl font-bold text-black my-7">Oops!! Sorry, There is no content here</h2>
+      </div>
+     `;
+     return;
+  }
   videos.forEach((video) => {
     console.log(video);
     const videoCard = document.createElement("div");
